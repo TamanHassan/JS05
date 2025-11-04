@@ -2,6 +2,14 @@ const account = {
     accountName: "Taman",
     balance: 1000,
 
+    getAccountName: function() {
+        console.log(`Account Name: ${this.accountName}`);
+    },
+
+    getBalance: function() {
+        console.log(`Current Balance: $${this.balance}`);
+    },
+
     deposit: function(amount) {
         if (amount <= 0 || isNaN(amount)) {  
             this.accountError("Invalid deposit amount.");
@@ -19,12 +27,12 @@ const account = {
     }
     };
 
-    account.getAcoountName(); Taman 
-    account.getBalance(); 1000
-    account.deposit(500); You deposited $500. New balance is $1500.
-    account.witdrawal(200); You withdrew $200. New balance is $1300.
-    account.withdrawal(5000); Account Error: Insufficient funds.
-    account.exitAccount(); Exiting account.
-    
+    account.getAccountName(); 
+    account.getBalance(); 
+    account.deposit(500); 
+    account.withdrawal(200); 
+    account.withdrawal(5000);
+    account.exitAccount(); 
+
 
 
