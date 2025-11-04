@@ -18,6 +18,23 @@ const account = {
         this.balance += amount;
         console.log(`You deposited $${amount}. New balance is $${this.balance}.`);
     },
+
+    withdrawal: function(amount) {
+        if (amount <= 0 || isNaN(amount)) {  
+            this.accountError("Invalid withdrawal amount.");
+            return;
+        }
+
+        if (amount > this.balance) {
+            this.accountError("Insufficient funds for this withdrawal.");
+            return;
+        }
+
+        this.balance -= amount;
+        console.log(`You withdrew $${amount}. New balance is $${this.balance}.`);
+    },
+
+
     accountError: function(message) {
         console.error(`Account Error: ${message}`);
     },
